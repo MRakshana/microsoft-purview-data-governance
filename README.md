@@ -1,149 +1,161 @@
-# microsoft-purview-data-governance
-Microsoft Purview Data Discovery &amp; Governance project demonstrating metadata management, data cataloguing, classification, ownership, CDEs, lineage and data quality.
-This portfolio project uses synthetic data and recreates a representative enterprise data-governance scenario.
-# Microsoft Purview – Data Discovery & Governance Project
+# Microsoft Purview Data Governance & Data Quality Portfolio
+
+An end-to-end data governance portfolio project demonstrating how banking customer data can be discovered, catalogued, classified, owned, monitored and governed using Microsoft Purview-aligned concepts.
+
+The project uses fully synthetic Customer, Account and KYC datasets and combines governance documentation with practical Python-based data quality controls.
+
+> **Portfolio note:** All data in this repository is synthetic. No employer, customer, confidential or production data is included.
+
+---
 
 ## Project Overview
 
-This project demonstrates an end-to-end Data Discovery and Data Governance use case using Microsoft Purview concepts.
+Financial organisations depend on trusted customer data across onboarding, account servicing, KYC, risk management and reporting.
 
-The objective is to demonstrate how enterprise customer data can be discovered, catalogued, classified, documented and governed so that data consumers can easily understand what data exists, where it comes from, who owns it and whether it is suitable for use.
+This project demonstrates governance across three connected data assets:
 
-The project is based on my hands-on experience with data governance, data ownership, metadata management and data quality, and has been recreated using synthetic banking data for portfolio purposes.
+- Customer Master
+- Account Data
+- KYC Data
 
-> **Note:** All datasets used in this repository are synthetic. No confidential, proprietary or customer information from any organisation is included.
-
----
-
-## Business Problem
-
-Customer information is often distributed across multiple systems such as customer onboarding, KYC, account management and reporting platforms.
-
-Without effective data governance, users may struggle to answer questions such as:
-
-- What customer data is available?
-- Where does the data originate?
-- What does each data element mean?
-- Which fields are Critical Data Elements (CDEs)?
-- Who owns the data?
-- Does the dataset contain sensitive information?
-- What is the lineage of the data?
-- Can the data be trusted for business and analytical use?
-
-This project demonstrates how Microsoft Purview and data governance practices can help address these challenges.
+The project covers Critical Data Elements (CDEs), metadata, business glossary, classification, ownership and stewardship, lineage, data quality controls, issue management and remediation.
 
 ---
 
-## Project Scope
+## Data Assets
 
-The project covers:
+| Dataset | Records | Purpose |
+|---|---:|---|
+| Customer Master | 100 | Core customer identification and lifecycle information |
+| Account Data | 100 | Customer account information |
+| KYC Data | 100 | KYC verification, review and customer risk information |
 
-- Data Discovery
-- Microsoft Purview Data Catalog
-- Business and Technical Metadata
-- Data Classification
-- Business Glossary
-- Data Ownership & Stewardship
-- Critical Data Elements (CDEs)
-- Data Lineage
-- Data Quality Rules
-- Data Issue Management & Remediation
-- Data Governance Controls
+**Total: 300 synthetic records**
+
+Customer Master acts as the primary customer source, with `Customer_ID` connecting Account and KYC data.
 
 ---
 
-## Data Domain
+## Critical Data Elements
 
-**Domain:** Customer Data
+13 CDEs were identified across the three data assets.
 
-The project uses synthetic datasets representing:
+Examples include:
 
-- Customer Master Data
-- Customer Account Data
-- KYC / Customer Due Diligence Data
+`Customer_ID` • `Customer_Name` • `Date_of_Birth` • `Country_Code` • `Customer_Status` • `Account_ID` • `Currency` • `Account_Status` • `KYC_Status` • `Customer_Risk_Rating` • `Last_Review_Date`
 
-Example data elements include:
+The CDE register documents business definitions, ownership, stewardship, DQ dimensions, rules, thresholds and classifications.
 
-`Customer_ID`
-
-`Customer_Name`
-
-`Date_of_Birth`
-
-`Email_Address`
-
-`Phone_Number`
-
-`Country`
-
-`KYC_Status`
-
-`Customer_Risk_Rating`
-
-`Account_ID`
-
-`Account_Status`
+➡️ [View CDE Register](metadata/CDE_Register.xlsx)
 
 ---
 
-## Data Discovery with Microsoft Purview
+## Data Quality Assessment
 
-The data discovery process demonstrates how data assets can be identified and made easier for users to understand through:
+Python and Pandas were used to profile the datasets and automate data quality controls.
 
-1. Data source registration
-2. Data scanning
-3. Asset discovery
-4. Metadata extraction
-5. Data classification
-6. Business descriptions
-7. Ownership assignment
-8. Glossary association
-9. Data lineage
-10. Catalogue search and discovery
+| Control | Score | Result |
+|---|---:|---|
+| Customer_ID Completeness | 100% | PASS |
+| Customer_ID Uniqueness | 98% | FAIL |
+| Date_of_Birth Completeness | 99% | FAIL |
+| Country_Code Validity | 99% | FAIL |
+| KYC_Status Completeness | 99% | FAIL |
+| Customer_Risk_Rating Validity | 98% | FAIL |
+| Account → Customer Referential Integrity | 98% | FAIL |
+| KYC → Customer Referential Integrity | 98% | FAIL |
 
-The objective is to enable data consumers to discover relevant datasets and understand their business context before using them.
+### Evidence
 
----
+➡️ [Data Quality Analysis Notebook](data-quality/data_quality_analysis.ipynb)
 
-## Governance Framework
+➡️ [Automated Data Quality Checks](data-quality/data_quality_checks.py)
 
-The project applies governance controls around:
-
-**Ownership**
-
-Clear Data Owner and Data Steward responsibilities.
-
-**Metadata**
-
-Business and technical descriptions for important data elements.
-
-**Critical Data Elements**
-
-Identification of data elements that are important for business, regulatory or operational processes.
-
-**Data Quality**
-
-Rules and thresholds covering completeness, accuracy, consistency, validity and timeliness.
-
-**Classification**
-
-Identification and appropriate classification of sensitive customer information.
-
-**Lineage**
-
-Documentation of how data moves from source systems through transformation and downstream consumption.
+➡️ [DQ Assessment & Issue Register](data-quality/DQ_Assessment.xlsx)
 
 ---
 
-## Tools & Technologies
+## Root Cause Analysis & Remediation
 
-- Microsoft Purview
-- SQL
-- Python
-- Pandas
-- Power BI
-- Microsoft Excel
-- GitHub
+Profiling identified a duplicate `CUST079` identifier in Customer Master.
+
+The expected `CUST080` master record was therefore absent, while downstream Account and KYC records referenced `CUST080`, causing referential-integrity failures.
+
+Additional orphan identifiers `CUST999` and `CUST998` were identified for investigation.
+
+The remediation approach includes source validation, identifier correction, downstream validation, re-running DQ controls and documenting issue closure.
+
+---
+
+## Data Lineage
+
+Lineage was documented to show the relationship between Customer Master, Account and KYC data and to support impact analysis and root-cause investigation.
+
+➡️ [View Lineage Documentation](lineage/lineage_documentation.md)
+
+➡️ [View Lineage Diagram](lineage/customer_data_lineage.png)
+
+---
+
+## Microsoft Purview Governance Design
+
+The project applies Microsoft Purview-aligned governance concepts across the data lifecycle.
+
+### Asset Catalogue
+Business descriptions, schemas, ownership, stewardship, CDEs and classifications.
+
+➡️ [View Asset Catalogue](purview/asset_catalog.md)
+
+### Business Glossary
+Consistent definitions for key terms including Customer, Customer ID, KYC Status and Customer Risk Rating.
+
+➡️ [View Business Glossary](purview/business_glossary.md)
+
+### Data Classification
+Classification of personal data, customer identifiers, contact information, KYC data, risk data and internal financial data.
+
+➡️ [View Classification Framework](purview/classifications.md)
+
+### Ownership & Stewardship
+Role-based accountability for definitions, CDEs, data quality monitoring and remediation.
+
+➡️ [View Ownership & Stewardship Model](purview/ownership_and_stewardship.md)
+
+---
+
+## Purview Portfolio Visuals
+
+The following visuals illustrate how the synthetic governed assets could be represented in a Microsoft Purview-style catalogue experience.
+
+> **Important:** These are illustrative portfolio mock-ups based on synthetic data and are not screenshots from an employer or production environment.
+
+### Customer Master
+
+![Customer Master](purview/screenshots/Microsoft%20Purview%20Customer%20Master%20Overview.png)
+
+### Account Data
+
+![Account Data](purview/screenshots/Microsoft%20Purview%20Account%20Data%20Overview.png)
+
+### KYC Data
+
+![KYC Data](purview/screenshots/Microsoft%20Purview%20KYC%20Data%20Dashboard.png)
+
+---
+
+## Governance Lifecycle
+
+**Discover → Identify CDEs → Define Metadata → Assign Ownership → Classify → Define DQ Rules → Profile → Identify Exceptions → Root Cause Analysis → Remediate → Monitor**
+
+---
+
+## Tools & Skills Demonstrated
+
+**Governance:** Microsoft Purview concepts, Data Ownership, Data Stewardship, CDE Management, Metadata Management, Business Glossary, Classification and Lineage
+
+**Data Quality:** Python, Pandas, profiling, DQ rules, thresholds, referential integrity, issue management and remediation
+
+**Documentation:** Jupyter Notebook, Excel, Markdown and GitHub
 
 ---
 
@@ -151,12 +163,35 @@ Documentation of how data moves from source systems through transformation and d
 
 ```text
 microsoft-purview-data-governance/
-│
-├── README.md
 ├── data/
 ├── metadata/
+│   └── CDE_Register.xlsx
 ├── data-quality/
+│   ├── data_quality_analysis.ipynb
+│   ├── data_quality_checks.py
+│   └── DQ_Assessment.xlsx
 ├── lineage/
+│   ├── customer_data_lineage.png
+│   └── lineage_documentation.md
 ├── purview/
-└── src/
+│   ├── asset_catalog.md
+│   ├── business_glossary.md
+│   ├── classifications.md
+│   ├── ownership_and_stewardship.md
+│   └── screenshots/
+└── README.md
+```
 
+---
+
+## Key Skills Demonstrated
+
+Data Governance • Microsoft Purview • Data Ownership • Data Stewardship • Metadata Management • Data Cataloguing • CDE Management • Business Glossary • Data Classification • Data Quality • Data Lineage • Root Cause Analysis • Issue Remediation • Python • Pandas
+
+---
+
+## Disclaimer
+
+This is an independent portfolio project using synthetic banking data for learning and professional demonstration purposes.
+
+No employer, customer, confidential, proprietary or production data is included. Microsoft Purview interface visuals are illustrative portfolio mock-ups.
