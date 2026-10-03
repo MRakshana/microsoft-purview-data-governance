@@ -1,0 +1,101 @@
+KYC_ID,Customer_ID,KYC_Status,Customer_Risk_Rating,Last_Review_Date,ID_Document_Type
+KYC001,CUST001,Verified,Medium,2024-01-30,Driving Licence
+KYC002,CUST002,Verified,Low,2025-05-14,Passport
+KYC003,CUST003,Verified,Low,2024-12-14,Driving Licence
+KYC004,CUST004,Expired,Low,2025-07-23,Passport
+KYC005,CUST005,Pending,Low,2024-03-28,Passport
+KYC006,CUST006,Verified,Medium,2025-07-22,Passport
+KYC007,CUST007,Verified,Medium,2025-04-03,Passport
+KYC008,CUST008,Verified,Low,2024-08-14,Driving Licence
+KYC009,CUST009,Verified,Low,2025-11-10,National ID
+KYC010,CUST010,Verified,Medium,2025-07-20,National ID
+KYC011,CUST011,Verified,Medium,2026-02-02,National ID
+KYC012,CUST012,Verified,Medium,2025-12-20,Driving Licence
+KYC013,CUST013,Verified,Low,2024-09-14,Passport
+KYC014,CUST014,Verified,Low,2024-11-19,Passport
+KYC015,CUST015,Pending,Low,2024-07-15,Passport
+KYC016,CUST016,Verified,Low,2026-01-11,National ID
+KYC017,CUST017,Pending,High,2024-10-16,Passport
+KYC018,CUST018,Verified,Low,2024-08-20,Driving Licence
+KYC019,CUST019,Verified,Low,2024-01-15,National ID
+KYC020,CUST020,,Low,2024-10-07,Passport
+KYC021,CUST021,Verified,High,2024-10-26,National ID
+KYC022,CUST022,Verified,Medium,2024-04-15,Passport
+KYC023,CUST023,Expired,Low,2025-04-25,Driving Licence
+KYC024,CUST024,Verified,Medium,2024-07-07,Passport
+KYC025,CUST025,Verified,Medium,2024-04-26,Passport
+KYC026,CUST026,Verified,Medium,2024-03-16,National ID
+KYC027,CUST027,Verified,Low,2024-06-01,National ID
+KYC028,CUST028,Verified,Low,2024-09-11,Passport
+KYC029,CUST029,Pending,Medium,2025-09-12,National ID
+KYC030,CUST030,Expired,Low,2026-03-05,National ID
+KYC031,CUST031,Verified,Medium,2026-07-19,Driving Licence
+KYC032,CUST032,Verified,High,2025-03-15,Driving Licence
+KYC033,CUST033,Expired,High,2024-03-02,National ID
+KYC034,CUST034,Verified,Low,2025-10-02,Passport
+KYC035,CUST035,Verified,Low,2024-06-09,Passport
+KYC036,CUST036,Verified,High,2024-03-17,Passport
+KYC037,CUST037,Verified,LOW,2025-04-06,National ID
+KYC038,CUST038,Expired,Medium,2024-10-25,Passport
+KYC039,CUST039,Verified,Low,2025-12-24,Driving Licence
+KYC040,CUST040,Verified,Low,2025-12-04,Passport
+KYC041,CUST041,Verified,High,2025-11-08,Passport
+KYC042,CUST042,Verified,Low,2025-07-11,Passport
+KYC043,CUST043,Verified,Low,2026-04-26,Passport
+KYC044,CUST044,Verified,Low,2024-06-18,Driving Licence
+KYC045,CUST045,Expired,High,2026-08-01,Driving Licence
+KYC046,CUST046,Verified,Low,2025-04-24,National ID
+KYC047,CUST047,Verified,Medium,2026-08-23,Driving Licence
+KYC048,CUST048,Pending,High,2025-05-20,Driving Licence
+KYC049,CUST049,Verified,High,2024-02-10,Driving Licence
+KYC050,CUST050,Verified,High,2024-09-13,Passport
+KYC051,CUST051,Verified,Low,2026-09-11,National ID
+KYC052,CUST052,Expired,High,2026-08-31,Passport
+KYC053,CUST053,Verified,High,2024-02-11,Passport
+KYC054,CUST054,Verified,High,2025-10-29,Driving Licence
+KYC055,CUST055,Verified,Critical,2025-08-22,Driving Licence
+KYC056,CUST056,Verified,Low,2025-04-26,Driving Licence
+KYC057,CUST057,Verified,Medium,2024-11-24,National ID
+KYC058,CUST058,Verified,Low,2024-12-03,Driving Licence
+KYC059,CUST059,Verified,Low,2025-11-09,Driving Licence
+KYC060,CUST060,Pending,Low,2025-04-10,Passport
+KYC061,CUST061,Verified,Low,2024-11-27,Passport
+KYC062,CUST062,Verified,High,2026-04-24,Passport
+KYC063,CUST063,Pending,Medium,2025-02-27,Passport
+KYC064,CUST064,Verified,High,2025-01-05,National ID
+KYC065,CUST065,Verified,Medium,2026-02-17,Passport
+KYC066,CUST066,Verified,Low,2025-07-16,Passport
+KYC067,CUST067,Verified,Medium,2026-06-20,National ID
+KYC068,CUST068,Verified,Low,2024-01-30,National ID
+KYC069,CUST069,Expired,Low,2025-12-27,Passport
+KYC070,CUST070,Verified,High,2024-01-15,National ID
+KYC071,CUST071,Verified,Low,2024-08-18,Passport
+KYC072,CUST072,Verified,Low,2025-10-25,Passport
+KYC073,CUST073,Verified,Low,2025-06-05,National ID
+KYC074,CUST074,Verified,Medium,2026-05-04,Driving Licence
+KYC075,CUST075,Verified,Low,2025-04-12,National ID
+KYC076,CUST076,Verified,Medium,2024-07-14,National ID
+KYC077,CUST077,Pending,Low,2026-06-03,Passport
+KYC078,CUST078,Verified,Medium,2024-12-14,National ID
+KYC079,CUST079,Verified,Low,2024-10-16,National ID
+KYC080,CUST080,Verified,High,2025-08-16,National ID
+KYC081,CUST081,Verified,Low,2025-04-02,National ID
+KYC082,CUST082,Verified,Medium,2024-12-06,National ID
+KYC083,CUST083,Pending,Medium,2025-04-11,Driving Licence
+KYC084,CUST084,Verified,Low,2025-08-08,Driving Licence
+KYC085,CUST085,Verified,Medium,2024-02-14,Driving Licence
+KYC086,CUST086,Verified,Medium,2025-01-30,National ID
+KYC087,CUST087,Verified,Medium,2026-09-14,Passport
+KYC088,CUST088,Verified,High,2026-09-15,National ID
+KYC089,CUST998,Verified,Low,2026-06-14,Driving Licence
+KYC090,CUST090,Verified,High,2026-07-21,Driving Licence
+KYC091,CUST091,Verified,Low,2025-02-23,National ID
+KYC092,CUST092,Verified,Low,2025-04-25,Driving Licence
+KYC093,CUST093,Verified,High,2025-12-10,Driving Licence
+KYC094,CUST094,Verified,Medium,2026-05-22,National ID
+KYC095,CUST095,Pending,Medium,2026-09-04,Driving Licence
+KYC096,CUST096,Verified,High,2024-02-06,National ID
+KYC097,CUST097,Verified,Low,2025-10-08,National ID
+KYC098,CUST098,Verified,Low,2026-02-03,Passport
+KYC099,CUST099,Verified,Low,2026-02-17,National ID
+KYC100,CUST100,Verified,Medium,2024-06-19,National ID
